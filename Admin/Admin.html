@@ -167,11 +167,6 @@
     </section>
 
     <Section>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" >
-            Launch demo modal
-        </button>
-
         <!-- Modal -->
         <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -184,12 +179,12 @@
                     <div class="modal-body">
                         <input style="margin-bottom: 1rem; width: 75%;" id="name"type="text" placeholder="enter name"><br>
                         <input style="margin-bottom: 1rem; width: 75%;" id="type"type="text" placeholder="enter type"><br>
-                        <input style="margin-bottom: 1rem; width: 75%;" id="abilities"type="text" placeholder="enter abilities"><br>
+                        <input style="margin-bottom: 1rem; width: 75%; height: 3rem;" id="abilities"type="text" placeholder="enter abilities"><br>
                         <input style="margin-bottom: 1rem; width: 75%;" id="price"type="number" placeholder="enter price"><br>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-primary" onclick="updateBtn(event)">Save changes</button>
                     </div>
                 </div>
             </div>

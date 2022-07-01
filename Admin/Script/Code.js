@@ -277,7 +277,7 @@ function loadData(j) {
             <td><img src="${item.image}"></img></td>
             <td>${item.price}</td>
 
-            <td><button onclick="editItem(${item.id})" data-bs-toggle="modal" data-bs-target="#Modal1"><i class="fa-solid fa-pen"></i></button></td>
+            <td><button onclick="editItem(${item.id})" data-bs-toggle="modal" data-bs-target="#Modal1" style=" border: none; background-color: white;"><i class="fa-solid fa-pen"></i></button></td>
 
             <td><button style=" border: none; background-color: white;" onclick="delItem(${item.id})"><i class="fa-solid fa-trash-can"></button></i></td>
         </tr>
@@ -300,10 +300,10 @@ function delItem(id) {
 
 // edit function 
 function editItem(id) {
-    document.getElementById("name").value = magicWeapons.name;
-    document.getElementById("type").value = magicWeapons.type;
-    document.getElementById("abilities").value = magicWeapons.abilities
-    ddocument.getElementById("price").value = magicWeapons.price
+    document.getElementById("name").value = magicWeapons[id].name;
+    document.getElementById("type").value = magicWeapons[id].type;
+    document.getElementById("abilities").value = magicWeapons[id].abilities
+    document.getElementById("price").value = magicWeapons[id].price
 
 }
 
@@ -340,6 +340,24 @@ function priceSort(e) {
     const filtered = magicWeapons.filter((item) => item.price == type);
 
     return loadData(filtered);
+}
+
+function updateBtn(id) {
+    
+
+    let name = document.getElementById("name").value;
+
+    let type = document.getElementById("type").value;
+
+    let abilities = document.getElementById("abilities").value;
+
+    let price = document.getElementById("price").value;
+
+    // update localStorage
+    localStorage.setItem('magicWeapons', JSON.stringify(magicWeapons))
+
+    // Show items 
+    loadData(magicWeapons)
 }
 
 loadData(magicWeapons)
