@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+#Landing{
+  background-image: linear-gradient(to bottom,
+  rgba(0, 0, 0, 0) 10%, #ff778bea 95% ), url('../sailor_moon/Background-Landing-3.gif') ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh; 
+  width: 100%;
+}
+
+#Landing .row {
+  min-height:  100vh;
+}
+
+h1{
+  color: white;
+}
+
+
+h3{
+  color: white;
+}
+
+#Search-Bar{
+  min-height: 20vh;
+}
+
+#Search-Bar .row{
+  height: fit-content;
+}
+
+#propertiesList{
+  min-height: 50vh;
+}
+
+#backface{
+  background-color: rgba(255, 171, 188, 0.747);
+  color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s linear;
+  height: 350px;
+}
+
+#backface:hover{
+  opacity: 1;
+}
+
+#property-heading{
+  color: black;
+}
+
+label{
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+@media all and (max-width: 768px){
+  .card{
+    width: 200px;
+  }
+
+}
