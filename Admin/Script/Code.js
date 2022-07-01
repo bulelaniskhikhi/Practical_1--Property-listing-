@@ -263,8 +263,10 @@ let magicWeapons = JSON.parse(localStorage.getItem('magicWeapons')) ?
     let display = document.getElementById('tableContent')
 // clear array
 function loadData(j) {
-    console.log(j);
+    
+    // clear items
     display.innerHTML = ""
+
     // displaying on html
     j.forEach((item) => {
         display.innerHTML += `
@@ -274,15 +276,16 @@ function loadData(j) {
             <td>${item.type}</td>
             <td><img src="${item.image}"></img></td>
             <td>${item.price}</td>
-            <td><button onclick="editItem()><i class="fa-solid fa-pen"></i></button></td>
+
+            <td><button onclick="editItem(${item.id})" data-bs-toggle="modal" data-bs-target="#Modal1"><i class="fa-solid fa-pen"></i></button></td>
+
             <td><button style=" border: none; background-color: white;" onclick="delItem(${item.id})"><i class="fa-solid fa-trash-can"></button></i></td>
         </tr>
         `
     })
 }
 
-// clear delItems
-
+// delete function
 function delItem(id) {
     magicWeapons = magicWeapons.filter(item => {
         return item.id !== id
@@ -294,6 +297,16 @@ function delItem(id) {
     // Show items 
     loadData(magicWeapons)
 }
+
+// edit function 
+function editItem(id) {
+    document.getElementById("name").value = magicWeapons.name;
+    document.getElementById("type").value = magicWeapons.type;
+    document.getElementById("abilities").value = magicWeapons.abilities
+    ddocument.getElementById("price").value = magicWeapons.price
+
+}
+
 
 // sort type dropdown
 function typeSort(e) {
