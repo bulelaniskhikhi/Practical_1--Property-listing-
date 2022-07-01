@@ -164,6 +164,7 @@ function createDiv(height, width) {
 // Magiical items array
 let magicWeapons = JSON.parse(localStorage.getItem('magicWeapons')) ?
     JSON.parse(localStorage.getItem('magicWeapons')) : [{
+            id: 1,
             name: "Cutie Moon Rod",
             type: "Rod",
             abilities: "Healing or purifying evil forces Destroying enemies",
@@ -171,6 +172,7 @@ let magicWeapons = JSON.parse(localStorage.getItem('magicWeapons')) ?
             price: 1500,
         },
         {
+            id: 2,
             name: "Eternal Tiare",
             type: "Rod",
             abilities: "Destroying and healing enemies",
@@ -178,6 +180,7 @@ let magicWeapons = JSON.parse(localStorage.getItem('magicWeapons')) ?
             price: 2000,
         },
         {
+            id: 3,
             name: "Garnet Rod",
             type: "wand",
             abilities: "Attacking and wiping out enemies, Control over the Space-Time Door,Time travel, Ability to stop all of time(forbidden) Control over the space-time continuum ",
@@ -185,6 +188,7 @@ let magicWeapons = JSON.parse(localStorage.getItem('magicWeapons')) ?
             price: 5000,
         },
         {
+            id: 4,
             name: "Moon Kaleido Scope",
             type: "Sword",
             abilities: "Destroying Lemures",
@@ -192,6 +196,7 @@ let magicWeapons = JSON.parse(localStorage.getItem('magicWeapons')) ?
             price: 3000,
         },
         {
+            id: 5,
             name: "Moon Stick",
             type: "Rod",
             abilities: "Healing victims and destroying enemies",
@@ -199,6 +204,7 @@ let magicWeapons = JSON.parse(localStorage.getItem('magicWeapons')) ?
             price: 800,
         },
         {
+            id: 6,
             name: "Sailor Star Yell",
             type: "Disc",
             abilities: "Attacking and destroying enemies",
@@ -206,6 +212,7 @@ let magicWeapons = JSON.parse(localStorage.getItem('magicWeapons')) ?
             price: 2500,
         },
         {
+            id: 7,
             name: "Sealing Wand Clow Form",
             type: "Wand",
             abilities: "Ability to seal or summon Clow Cards at will",
@@ -213,6 +220,7 @@ let magicWeapons = JSON.parse(localStorage.getItem('magicWeapons')) ?
             price: 3500,
         },
         {
+            id: 8,
             name: "Sealing Wand Dream Form",
             type: "Wand",
             abilities: "Seal and utilize the Clear Cards",
@@ -220,6 +228,7 @@ let magicWeapons = JSON.parse(localStorage.getItem('magicWeapons')) ?
             price: 5000,
         },
         {
+            id: 9,
             name: "Sealing Wand Star Form",
             type: "Wand",
             abilities: "Ability to seal or summon Clow Cards at will and the power to change the cards into Sakura Cards",
@@ -227,6 +236,7 @@ let magicWeapons = JSON.parse(localStorage.getItem('magicWeapons')) ?
             price: 4500,
         },
         {
+            id: 10,
             name: "Spiral Heart Moon Rod",
             type: "Rod",
             abilities: "Purifying monster-turned humans",
@@ -234,6 +244,7 @@ let magicWeapons = JSON.parse(localStorage.getItem('magicWeapons')) ?
             price: 3000,
         },
         {
+            id: 11,
             name: "Talaria Shoes",
             type: "Shoe",
             abilities: "Gives the user the ablity to temporarily fly/ glide",
@@ -241,6 +252,7 @@ let magicWeapons = JSON.parse(localStorage.getItem('magicWeapons')) ?
             price: 500,
         },
         {
+            id: 12,
             name: "Wings of Icarus",
             type: "Wings",
             abilities: "The ablility to fly",
@@ -253,6 +265,7 @@ let magicWeapons = JSON.parse(localStorage.getItem('magicWeapons')) ?
 let display = document.getElementById('properties')
 // clear array
 function loadData(j) {
+    console.log(j);
     display.innerHTML = "";
 
     // displaying on html
@@ -294,7 +307,7 @@ function loadData(j) {
 
 loadData(magicWeapons)
 
-// sort dropdown
+// sort type dropdown
 function typeSort(e) {
     const type = e.target.value;
     if (type === "all") {
@@ -312,6 +325,7 @@ const textSearch = (e) => {
     const filteredItems = magicWeapons.filter((item) =>
         item.name.toLowerCase().includes(text.toLowerCase())
     );
+    
     loadData(filteredItems);
 };
 
